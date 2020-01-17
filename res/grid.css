@@ -1,0 +1,37 @@
+* {
+    font-size: 24;
+}
+
+settings {
+    background: #f4cb53;
+}
+
+tab1 {
+    background: #a300f0;
+}
+
+tab2 {
+    background: #401dcb;
+}
+
+tab3 {
+    background: #ee2d44;
+}
+
+bluebayoux {
+    background: #516475;
+}
+
+linkwater {
+    background: #dfebf5;
+    color: #3b434a;
+}
+
+light-text {
+    color: #dfebf5;
+}
+
+goldendream {
+    background: #efd035;
+    color: #3b434a;
+}
