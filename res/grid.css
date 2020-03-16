@@ -2,24 +2,31 @@
     font-size: 24;
 }
 
-settings {
-    background: #f4cb53;
+#settings {
+    background: #282a33;
 }
 
-tab1 {
-    background: #a300f0;
+#header_tabs, #body_content, #body_tabs, #settings_tabs {
+    padding:0;
+    border-width:0;
 }
 
-tab2 {
-    background: #401dcb;
+key {
+    font-size: 16;
 }
 
-tab3 {
-    background: #ee2d44;
+value {
+    border-width:0;
+}
+
+tab {
+    background: #282a33;
 }
 
 bluebayoux {
-    background: #516475;
+    /* background: #516475; */
+    background: #2784d7;
+
 }
 
 linkwater {

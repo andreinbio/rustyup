@@ -1,13 +1,19 @@
 use orbtk::prelude::*;
 use orbtk::theme::DEFAULT_THEME_CSS;
 
-mod prelude;
+mod main_state;
+mod main_view;
+
 mod header;
 mod body;
+mod update;
+mod appsettings;
+
+use main_state::*;
+use main_view::*;
 
 use header::render_header;
 use body::*;
-use prelude::*;
 
 fn get_theme() -> ThemeValue {
     ThemeValue::create_from_css(DEFAULT_THEME_CSS)
@@ -15,31 +21,8 @@ fn get_theme() -> ThemeValue {
         .build()
 }
 
-widget!(MainView<MainViewState> {
-    text: String16
-});
-
-impl Template for MainView {
-    fn template(self, id: Entity, ctx: &mut BuildContext) -> Self {
-        let body_data = Body::init(ctx);
-        let header_elements = render_header(id, ctx, body_data.get_tabs());
-        self.name("MainView").child(
-            Grid::create()
-                .rows(Rows::create().row(50.0).row("*").build())
-                .child(
-                    Grid::create()
-                        .selector("bluebayoux")
-                        .attach(Grid::row(0))
-                        .child(header_elements)
-                        .build(ctx)
-                )
-                .child(body_data.get_entity())
-                .build(ctx))
-    }
-}
-
 fn main() {
-    Application::new()
+    Application::from_name("rustyup")
         .window(|ctx| {
             Window::create()
                 .title("Test")

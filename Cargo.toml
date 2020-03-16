@@ -9,6 +9,8 @@ edition = "2018"
 [dependencies]
 orbtk = { version="0.3.1-alpha1", path="../orbtk"}
 orbtk-api = { path="../orbtk/crates/api", version="0.3.1-alpha2"}
+serde = "1.0.104"
+serde_derive = "1.0.104"
 
 [features]
 debug = ["orbtk-api/debug"]
