@@ -1,9 +1,16 @@
 
+extern crate serde;
+
+mod config;
+mod appsettings;
+use appsettings::AppSettings;
 
 slint::include_modules!();
 
 fn update_window_settings(main_window: &MainWindow) -> () {
-    main_window.set_custom_min_height(400.0);
+    let settings: AppSettings = appsettings::load();
+    
+    main_window.set_custom_min_height(600.0);
 }
 
 fn save_window_settings(main_window: &MainWindow) -> () {
@@ -14,6 +21,7 @@ fn save_window_settings(main_window: &MainWindow) -> () {
     dbg!(&position.y);
     dbg!(&size.width);
     dbg!(&size.height);
+    // appsettings::save();
 }
 
 fn main() {
